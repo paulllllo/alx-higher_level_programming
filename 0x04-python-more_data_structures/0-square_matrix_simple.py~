@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+
+"""Function to square all the integers in a matrix"""
+
+def square_matrix_simple(matrix=[]):
+    new_matrix = [[x**2, y**2, z**2] for item in matrix for (x, y, z) in item]
+    return new_matrix
