@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+
+"""Function that prints a dictionary sorted by unordered keys"""
+
+
+def print_sorted_dictionary(a_dictionary):
+
+    for i in a_dictionary:
+        print(f"{i}: {a_dictionary}")
