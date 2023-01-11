@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a class that does nothing"""
+"""Defines a rectangle"""
 
 
 class Rectangle:
@@ -23,14 +23,14 @@ class Rectangle:
         self.__width = value
 
     @property
-    def heigth(self):
+    def height(self):
         return(self.__height)
 
     @height.setter
     def height(self, value):
         if not (type(value) == int):
             raise TypeError("height must be an integer")
-        if height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         print("Setting the height")
         self.__height = value
