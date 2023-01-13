@@ -59,6 +59,6 @@ class Rectangle:
     def __str__(self):
         """A string reprisentaion of object/instance with 'H'"""
         if ((self.__width == 0) | (self.__height == 0)):
-            return ""
+            return("")
         line = "#" * self.__width
         return("\n".join([line] * self.__height))
