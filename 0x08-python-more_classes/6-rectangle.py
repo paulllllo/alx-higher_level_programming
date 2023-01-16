@@ -3,7 +3,9 @@
 
 
 class Rectangle:
+    """Count number of instances"""
     number_of_instances = 0
+
     """A class that contains some attributes and methods/
     around a rectange"""
     def __init__(self, width=0, height=0):
