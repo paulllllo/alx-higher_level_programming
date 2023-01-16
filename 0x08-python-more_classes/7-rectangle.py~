@@ -5,7 +5,7 @@
 class Rectangle:
     """Public attributes"""
     number_of_instances = 0
-    print_symbol = #
+    print_symbol = "#"
 
     """A class that contains some attributes and methods/
     around a rectange"""
@@ -65,7 +65,11 @@ class Rectangle:
         """A string reprisentaion of object/instance with 'H'"""
         if ((self.__width == 0) | (self.__height == 0)):
             return("")
-        line = f'{Rectangle.print_symbol}' * self.__width
+        if self.print_symbol:
+            symbol = f"({self.print_symbol})"
+        else:
+            symbol = f"({Rectangle.print_symbol})"
+        line = symbol * self.__width
         return("\n".join([line] * self.__height))
 
     def __repr__(self):
