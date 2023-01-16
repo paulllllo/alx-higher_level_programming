@@ -68,5 +68,5 @@ class Rectangle:
         return f'Rectangle({self.__width}, {self.__height})'
 
     def __del__(self):
-        """A method that is called when all instances of an object is deleted"""
+        """Indicates when all refs to an instance are deleted"""
         print("Bye rectangle...")
