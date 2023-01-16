@@ -66,3 +66,7 @@ class Rectangle:
     def __repr__(self):
         """A formal string representation of object/instance"""
         return f'Rectangle({self.__width}, {self.__height})'
+
+    def __del__(self):
+        """A method that is called when all instances of an object is deleted"""
+        print("Bye rectangle...")
