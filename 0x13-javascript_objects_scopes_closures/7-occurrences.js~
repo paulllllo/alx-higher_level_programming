@@ -1,0 +1,10 @@
+#!/usr/bin/node
+exports.nbOccurences = function (list, item) {
+  let num = 0
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      num++;
+    }
+  }
+    return num;
+}
