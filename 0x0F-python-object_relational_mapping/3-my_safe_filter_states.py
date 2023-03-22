@@ -6,7 +6,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3])
     name_srch = ""
-    if not (all([char in sys.argv[4] for char in ["\\", "\'", "\""]])):
+    if (all([char not in sys.argv[4] for char in ["\\", "\'", "\""]])):
         name_srch = sys.argv[4]
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'\
