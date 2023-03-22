@@ -7,8 +7,8 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3])
     name_srh = sys.argv[4]
     cursor = db.cursor()
-    cursor.execute(f"SELECT * FROM states WHERE name LIKE '{name_srh}'\
-    ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE '{}'\
+    ORDER BY id ASC".format(name_srh))
     rows = cursor.fetchall()
     for (id, name) in rows:
         print(f"({id}, '{name}')")
