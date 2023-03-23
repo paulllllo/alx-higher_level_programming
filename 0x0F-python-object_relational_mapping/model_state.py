@@ -10,6 +10,8 @@ Base = declarative_base()
 
 
 class State(Base):
+    """A class that defines props of a state which is mapped to the\
+    states table"""
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False, unique=True,
                 autoincrement=True)
