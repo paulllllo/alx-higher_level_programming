@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Class definition of a state with declaration of base"""
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
