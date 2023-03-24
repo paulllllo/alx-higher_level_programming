@@ -15,6 +15,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     instances = session.query(State).order_by(State.id.asc())\
-                .filter(State.name.like('%a%'))
+                                    .filter(State.name.like('%a%'))
     for instance in instances:
         print(f"{instance.id}: {instance.name}")
