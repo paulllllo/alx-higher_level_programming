@@ -1,12 +1,19 @@
 #!/usr/bin/node
 const request = require('request');
-const wedge = '18';
-request(process.argv[2], { json: true }, (err, response, body) => {
-  if (err) {
-    return console.log(err);
+const url = process.argv[2];
+
+request(url, (error, response, body) => {
+  if (error) {
+    return console.error(error);
   }
-  console.log(body.results.reduce((prev, curr) => {
-    curr.characters.forEach(char => char.includes(wedge) && prev++);
-    return prev;
-  }, 0));
+  let count = 0;
+  const results = JSON.parse(body).results;
+  for (const x in results) {
+    for (const character in results[x].characters) {
+      if (results[x].characters[character] === 'https://swapi-api.alx-tools.com/api/people/18/') {
+        count++;
+      }
+    }
+  }
+  console.log(count);
 });
