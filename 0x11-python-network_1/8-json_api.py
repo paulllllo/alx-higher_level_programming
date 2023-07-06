@@ -1,20 +1,30 @@
 #!/usr/bin/python3
-"""A script that post a request with some data"""
+
+"""
+Sends a POST request to passed URL with a letter as parameter and displays
+the body of the response
+"""
 
 import requests
 import sys
 
-if __name__ == "__main__":
+
+def main():
+    url = 'http://0.0.0.0:5000/search_user'
+    if len(sys.argv) < 2:
+        q = {'q': ""}
+    else:
+        q = {'q': sys.argv[1]}
+    res = requests.post(url, data=q)
     try:
-        letter = sys.argv[1]
-    except IndexError:
-        letter = ''
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': letter})
-    try:
-        if r.json() != {}:
-            data = r.json()
-            print('[{}] {}'.format(data.get('id'), data.get('name')))
-        else:
+        obj = res.json()
+        if not obj:
             print('No result')
-    except requests.exceptions.JSONDecodeError as err:
+        else:
+            print(f"[{obj.get('id')}] {obj.get('name')}")
+    except Exception:
         print('Not a valid JSON')
+
+
+if __name__ == '__main__':
+    main()
