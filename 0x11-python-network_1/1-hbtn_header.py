@@ -4,8 +4,9 @@
 import urllib.request
 import sys
 
-with urllib.request.urlopen(sys.argv[1]) as response:
-    the_headers = response.info()
-    header_value = the_headers.get('X-Request-Id')
+if __name__ == "__main__":
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        the_headers = response.info()
+        header_value = the_headers.get('X-Request-Id')
 
-print(header_value)
+        print(header_value)
