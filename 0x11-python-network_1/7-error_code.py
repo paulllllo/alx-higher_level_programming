@@ -1,14 +1,9 @@
 #!/usr/bin/python3
-"""A script that makes a request and handles the error"""
+"""A script that post a request with some data"""
 
 import requests
 import sys
 
 if __name__ == "__main__":
-    try:
-        r = requests.get(sys.argv[1])
-        r.raise_for_status()
-        print(r.text)
-    except requests.exceptions.HTTPError as err:
-        if r.status_code > 400:
-            print(f'Error code: {r.status_code}')
+    r = requests.post(sys.argv[1], data={'email': sys.argv[2]})
+    print(r.text)
