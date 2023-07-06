@@ -7,6 +7,7 @@ Consumes the github api and prints some commits from a user
 import requests
 import sys
 
+
 def main():
     url = "https://api.github.com/repos/{}/{}/commits".format(
         sys.argv[2], sys.argv[1])
